@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/dayslrk/abac/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e9c17/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e9c17.dir/build.make CMakeFiles/cmTC_e9c17.dir/build
+make[1]: Entering directory '/home/dayslrk/abac/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e9c17.dir/CheckSymbolExists.c.o
+/usr/bin/arm-linux-gnueabihf-gcc    -o CMakeFiles/cmTC_e9c17.dir/CheckSymbolExists.c.o   -c /home/dayslrk/abac/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_e9c17
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e9c17.dir/link.txt --verbose=1
+/usr/bin/arm-linux-gnueabihf-gcc      -rdynamic CMakeFiles/cmTC_e9c17.dir/CheckSymbolExists.c.o  -o cmTC_e9c17 
+CMakeFiles/cmTC_e9c17.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x2c): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_e9c17.dir/build.make:97: recipe for target 'cmTC_e9c17' failed
+make[1]: *** [cmTC_e9c17] Error 1
+make[1]: Leaving directory '/home/dayslrk/abac/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_e9c17/fast' failed
+make: *** [cmTC_e9c17/fast] Error 2
+
+File /home/dayslrk/abac/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/dayslrk/abac/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c51aa/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c51aa.dir/build.make CMakeFiles/cmTC_c51aa.dir/build
+make[1]: Entering directory '/home/dayslrk/abac/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c51aa.dir/CheckFunctionExists.c.o
+/usr/bin/arm-linux-gnueabihf-gcc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_c51aa.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_c51aa
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c51aa.dir/link.txt --verbose=1
+/usr/bin/arm-linux-gnueabihf-gcc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_c51aa.dir/CheckFunctionExists.c.o  -o cmTC_c51aa -lpthreads 
+/usr/lib/gcc-cross/arm-linux-gnueabihf/7/../../../../arm-linux-gnueabihf/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_c51aa.dir/build.make:97: recipe for target 'cmTC_c51aa' failed
+make[1]: *** [cmTC_c51aa] Error 1
+make[1]: Leaving directory '/home/dayslrk/abac/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_c51aa/fast' failed
+make: *** [cmTC_c51aa/fast] Error 2
+
+
